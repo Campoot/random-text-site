@@ -10,15 +10,15 @@
     <div id="random-text">Загрузка...</div>
 
     <script>
-        // URL вашего веб-приложения на Google Apps Script
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbwVGNi9zGS1irz-arFA8aG_AIfLG3vTXl0Y-0EeXxD_7_5ejatTRw-MVOHAFl5H4F4M/exec";
+        // URL для получения случайной строки из Google Apps Script
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbwEtS0fkAHkzNJXwC6W6MVVOrv9V5yVkqb4HNxpEfNAHS5EmcIhUgkkrxMVkVLZM5sY/exec";  // замените на свой ID
 
-        // Функция для получения случайной строки
+        // Функция для получения случайной строки с Google Apps Script
         function getRandomText() {
             fetch(scriptUrl)
-                .then(response => response.text())
+                .then(response => response.json())
                 .then(data => {
-                    document.getElementById("random-text").innerText = data;  // Показать строку
+                    document.getElementById("random-text").innerText = data.data[0];  // Показать строку
                 })
                 .catch(error => {
                     console.error('Ошибка:', error);
