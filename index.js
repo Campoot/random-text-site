@@ -14,7 +14,7 @@ fetch('https://script.google.com/macros/s/AKfycbyQUOPqUfyogdWghCol13RLybOUJtA7Z1
     fetch('https://api.github.com/repos/Campoot/random-text-site/contents/data.json', {
       method: 'PUT',
       headers: {
-        'Authorization': 'Bearer <ТВОЙ ТОКЕН>',
+        'Authorization': 'Bearer <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>',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
