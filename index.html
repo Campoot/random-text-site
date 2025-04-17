@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Случайная строка</title>
+    <title>Случайная строка из таблицы</title>
 </head>
 <body>
-    <h1>Случайная строка:</h1>
+    <h1>Случайная строка из таблицы:</h1>
     <div id="random-text">Загрузка...</div>
 
     <script>
-        // URL для получения случайной строки из Google Apps Script
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbxxO6wN5xCzhkMeedJriHDzUfuoPJ9xBSh_OD_gCm9luT_5xDzpFsIqIxJ9GWB73IdO/exec";  // замените на свой ID
+        // URL для получения данных из Google Apps Script
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbxRKSb1jmq-lKgt5d3euPxqmosTPKIvylKxGep9DBqup-wMbLCW025eHrh_O9sBex-k/exec; // замените на свой ID
 
-        // Функция для получения случайной строки с Google Apps Script
+        // Функция для получения случайной строки из JSON
         function getRandomText() {
             fetch(scriptUrl)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById("random-text").innerText = data.data[0];  // Показать строку
+                    // Получаем случайную строку из данных
+                    const randomIndex = Math.floor(Math.random() * data.data.length);
+                    document.getElementById("random-text").innerText = data.data[randomIndex];
                 })
                 .catch(error => {
                     console.error('Ошибка:', error);
-                    document.getElementById("random-text").innerText = "Ошибка загрузки";
+                    document.getElementById("random-text").innerText = "Ошибка загрузки данных.";
                 });
         }
 
