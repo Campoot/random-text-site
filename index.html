@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Случайный текст</title>
+</head>
+<body>
+  <h1>Вот твоя строка:</h1>
+  <div id="output">Загрузка...</div>
+
+  <script>
+    fetch("https://script.google.com/macros/s/ТВОЙ_URL_СЮДА/exec")
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById("output").innerText = text;
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Ошибка загрузки";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
