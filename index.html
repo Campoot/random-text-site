@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Случайный текст</title>
 </head>
 <body>
@@ -9,7 +10,7 @@
   <div id="output">Загрузка...</div>
 
   <script>
-    fetch("https://script.google.com/macros/s/ТВОЙ_URL_СЮДА/exec")
+    fetch("https://script.google.com/macros/s/AKfycbwcbSvw4iNwL1VPCOIAAU-vHJjAQ3rMarfTdkZmbsD7PRWNbY9lNND34xq6ZkcDoAXi/exec")
       .then(response => response.text())
       .then(text => {
         document.getElementById("output").innerText = text;
