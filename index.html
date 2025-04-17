@@ -11,38 +11,13 @@
     fetch("https://script.google.com/macros/s/AKfycbwcbSvw4iNwL1VPCOIAAU-vHJjAQ3rMarfTdkZmbsD7PRWNbY9lNND34xq6ZkcDoAXi/exec")
       .then(response => response.text())
       .then(text => {
-        // Сохраняем строку в переменную
-        let randomText = text;
-
-        // Сразу отправляем текст в бота
-        sendToBot(randomText);
+        // Отображаем только строку без всего остального
+        document.body.textContent = text;
       })
       .catch(err => {
         console.error('Ошибка загрузки:', err);
+        document.body.textContent = "Ошибка загрузки данных.";
       });
-
-    // Функция для отправки данных в бота
-    function sendToBot(message) {
-      const botApiUrl = "https://ваш_путь_к_боту/endpoint"; // Замените на URL вашего бота
-
-      // Отправляем POST-запрос с текстом в бота
-      fetch(botApiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: message, // Содержание сообщения
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Сообщение отправлено:', data);
-      })
-      .catch(err => {
-        console.error('Ошибка при отправке сообщения:', err);
-      });
-    }
   </script>
 </body>
 </html>
