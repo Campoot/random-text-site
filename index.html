@@ -11,67 +11,19 @@
 
     <script>
         // URL вашего веб-приложения на Google Apps Script
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbxomb7E3XqS4WrLbDSQ0YGFRGIz-8zy4_KreTvTYjA77VuV1vUDIGSmVFH92_Mh5PU/exec";  // замените на свой ID
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbxBwApQDyBBBb5quGSxLb2rHoTHwebATx7xbmRQXHQRY4ATw8_YoJNBqflUOF9ggdgy/exec";
 
-        // Функция для получения случайной строки с Google Apps Script
+        // Функция для получения случайной строки
         function getRandomText() {
             fetch(scriptUrl)
-                .then(response => response.json())
+                .then(response => response.text())
                 .then(data => {
-                    document.getElementById("random-text").innerText = data.text;  // Показать строку
-                    sendToGitHub(data.text);  // Отправить строку обратно в GitHub
+                    document.getElementById("random-text").innerText = data;  // Показать строку
                 })
                 .catch(error => {
                     console.error('Ошибка:', error);
                     document.getElementById("random-text").innerText = "Ошибка загрузки";
                 });
-        }
-
-        // Функция для отправки данных обратно на GitHub
-        function sendToGitHub(text) {
-            const githubApiUrl = "https://api.github.com/repos/Campoot/random-text-site/contents/data.json";
-            const token = "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";  // Вставьте свой токен GitHub
-
-            // Получаем текущие данные в файле
-            fetch(githubApiUrl, {
-                method: "GET",
-                headers: {
-                    "Authorization": `token ${token}`
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                const sha = data.sha;  // Получаем sha файла для обновления
-                const updatedData = {
-                    "message": "Добавление новой строки",
-                    "committer": {
-                        "name": "Campoot",
-                        "email": "your_email@example.com"
-                    },
-                    "content": btoa(text),  // Кодируем строку в base64
-                    "sha": sha
-                };
-
-                // Обновляем файл на GitHub
-                fetch(githubApiUrl, {
-                    method: "PUT",
-                    headers: {
-                        "Authorization": `token ${token}`,
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(updatedData)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Данные обновлены:", data);
-                })
-                .catch(error => {
-                    console.error('Ошибка обновления:', error);
-                });
-            })
-            .catch(error => {
-                console.error('Ошибка получения sha:', error);
-            });
         }
 
         // Загружаем случайную строку при загрузке страницы
