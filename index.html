@@ -18,7 +18,11 @@
             fetch(scriptUrl)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById("random-text").innerText = data.data[0];  // Показать строку
+                    if (data && data.data && data.data.length > 0) {
+                        document.getElementById("random-text").innerText = data.data[0];  // Показать строку
+                    } else {
+                        document.getElementById("random-text").innerText = "Нет данных";  // Если данных нет
+                    }
                 })
                 .catch(error => {
                     console.error('Ошибка:', error);
@@ -28,6 +32,9 @@
 
         // Загружаем случайную строку при загрузке страницы
         window.onload = getRandomText;
+
+        // Периодическая проверка обновлений (например, каждые 5 секунд)
+        setInterval(getRandomText, 5000);  // Каждые 5 секунд проверка обновлений
     </script>
 </body>
 </html>
