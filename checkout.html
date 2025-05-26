@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оформление заказа — APKEYS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Rubik:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="apkeys-bg">
+  <header class="header">
+    <div class="container flex-between">
+      <a href="index.html" class="logo apkeys-logo">
+        <img src="img/apkeys-logo.svg" alt="APKEYS" class="logo-img"/>
+        APKEYS
+      </a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Поддержка</a>
+        <a href="cart.html" class="cart-link">
+          <span class="cart-emoji">🛒</span>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="profile.html" class="profile-link"><span class="profile-emoji">👤</span> Кабинет</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 class="section-title">Оформление заказа</h1>
+    <form id="checkout-form" class="checkout-form">
+      <label>Имя:<input type="text" name="name" required></label>
+      <label>E-mail:<input type="email" name="email" required></label>
+      <label>Способ оплаты:
+        <select name="payment" required>
+          <option value="card">Банковская карта</option>
+          <option value="qiwi">QIWI</option>
+          <option value="yoomoney">ЮMoney</option>
+        </select>
+      </label>
+      <button type="submit" class="btn big-btn">Оплатить</button>
+    </form>
+    <div id="order-result"></div>
+  </main>
+  <footer>
+    <div class="container flex-between">
+      <span class="footer-logo">APKEYS <span class="footer-emoji">🔥</span></span>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

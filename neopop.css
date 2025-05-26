@@ -1,0 +1,91 @@
+:root {
+  --bg: #fafbfc;
+  --card: #fff;
+  --primary: #f80092;
+  --secondary: #00d0ff;
+  --yellow: #ffe031;
+  --lime: #73f900;
+  --orange: #ff6a00;
+  --blue: #1d7cff;
+  --pop-gradient: linear-gradient(90deg, #f80092 0%, #ffe031 80%);
+  --pop-gradient2: linear-gradient(90deg, #1d7cff 0%, #00d0ff 100%);
+  --shadow: 0 6px 32px 0 #f8009222, 0 0 0 #00d0ff00;
+  --radius: 28px;
+}
+body {
+  background: var(--bg);
+  margin: 0;
+  color: #24252a;
+  font-family: 'Sora', 'DM Sans', 'Rubik', 'Fredoka', Arial, sans-serif;
+}
+a {color: var(--primary); text-decoration: none;}
+.npw-header, footer {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.npw-container {max-width: 1240px; margin: 0 auto; padding: 30px 18px;}
+.npw-flex-between {display: flex; justify-content: space-between; align-items: center;}
+.npw-logo {display:flex;align-items:center;gap:13px;font-size:2.3rem;font-weight:900;color:var(--primary);}
+.npw-logo-img {height:46px;}
+.npw-nav {display:flex;gap:28px;align-items:center;}
+.npw-nav a, .npw-profile-link {font-size:1.15em;font-weight:700;padding:12px 22px;border-radius:14px;transition:.18s;}
+.npw-nav a:hover, .npw-profile-link:hover {background:var(--pop-gradient);color:#fff;}
+.npw-cart-link {display:flex;align-items:center;gap:7px;}
+.npw-cart-emoji {font-size:1.45em;}
+#cart-count {background:var(--yellow);color:#222;border-radius:99px;font-weight:900;padding:4px 12px;box-shadow:0 2px 8px var(--yellow);}
+.npw-hero {background:var(--pop-gradient2);padding:68px 0 46px 0;border-radius:0 0 36px 36px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.npw-hero-flex {display:flex;align-items:center;justify-content:space-between;gap:38px;flex-wrap:wrap;}
+.npw-hero-content {max-width:480px;}
+.npw-hero-title {font-size:2.8rem;color:var(--primary);margin-bottom:16px;letter-spacing:1px;}
+.npw-hero-emoji {font-size:1.5em;}
+.npw-hero-desc {font-size:1.23rem;margin-bottom:32px;}
+.npw-hero-mascot img {height:180px;border-radius:30px;background:var(--yellow);}
+.npw-bubble-bg {position:absolute;right:8vw;bottom:-40px;width:180px;height:80px;background:radial-gradient(circle at 40% 60%, #ffe03188 40%, #f8009211 100%);border-radius:999px 999px 60px 80px;filter:blur(3px);opacity:.7;}
+.npw-btn {font-size:1.25rem;font-weight:900;border:none;border-radius:99px;padding:20px 46px;box-shadow:0 8px 24px 0 #f8009244;margin-right:10px;transition:.13s;cursor:pointer;outline:none;}
+.npw-btn-cta {background:var(--pop-gradient);color:#fff;}
+.npw-btn-cta:hover {background:var(--pop-gradient2);transform:scale(1.05) translateY(-2px);}
+.npw-btn-ghost {background:#fff;color:var(--primary);border:2px solid var(--primary);}
+.npw-btn-ghost:hover {background:var(--primary);color:#fff;}
+.npw-features-grid, .npw-bonus-grid, .npw-loyalty-grid, .npw-services-grid, .npw-currency-grid, .npw-socials-grid, .npw-reviews-grid, .npw-jobs-grid, .npw-blog-grid {display:flex;flex-wrap:wrap;gap:24px;justify-content:center;}
+.npw-feature-card, .npw-bonus-card, .npw-loyalty-card, .npw-service-block, .npw-currency-card, .npw-social-card, .npw-review-card, .npw-job-card, .npw-blog-card {background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 20px;text-align:center;min-width:170px;min-height:120px;display:flex;flex-direction:column;align-items:center;transition:.16s;font-family:inherit;}
+.npw-feature-card img, .npw-bonus-card img, .npw-loyalty-card img, .npw-service-block img, .npw-currency-card img, .npw-social-card img, .npw-review-card img, .npw-blog-card img {width:56px;height:56px;margin-bottom:8px;border-radius:12px;box-shadow:0 0 6px #ffe03133;}
+.npw-feature-card:hover, .npw-bonus-card:hover, .npw-loyalty-card:hover, .npw-service-block:hover, .npw-currency-card:hover, .npw-social-card:hover, .npw-review-card:hover, .npw-job-card:hover, .npw-blog-card:hover {box-shadow:0 10px 36px #f8009288;transform:scale(1.045) translateY(-4px);}
+.npw-pop-gradient {background:var(--pop-gradient2);}
+.npw-service-block {color:#fff;}
+.npw-section-title {font-size:2.1em;margin:38px 0 20px 0;font-family:'Fredoka','Sora',sans-serif;color:var(--primary);}
+.npw-shop-tabs {display:flex;gap:18px;margin-bottom:18px;}
+.npw-shop-tab {background:var(--yellow);padding:9px 28px;border-radius:18px;font-weight:700;color:#222;}
+.npw-shop-tab-active,.npw-shop-tab:hover {background:var(--primary);color:#fff;}
+.npw-games-grid {display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:32px;margin-top:18px;}
+.npw-card, .game-card {background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:19px;text-align:center;transition:.15s;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;}
+.npw-card:hover, .game-card:hover {box-shadow:0 12px 46px #00d0ff44, 0 4px 18px #f8009244;transform:scale(1.049) rotate(-1deg);}
+.npw-card img, .game-card img {width:94%;border-radius:24px;margin-bottom:13px;box-shadow:0 0 14px var(--secondary);}
+.npw-shop-more, .npw-blog-more, .npw-jobs-more {text-align:center;margin:25px 0;}
+.npw-loyalty-grid {gap:18px;}
+.npw-loyalty-card {flex:1 1 230px;}
+.npw-social-card {flex-direction:row;gap:14px;min-width:220px;}
+.npw-social-card b {font-size:1.15em;}
+.npw-blog-grid {gap:18px;}
+.npw-blog-card {flex-direction:row;min-width:0;min-height:0;padding:18px;}
+.npw-blog-card img {width:76px;height:76px;border-radius:18px;margin-right:12px;}
+.npw-blog-card div {text-align:left;}
+.npw-reviews-grid, .npw-jobs-grid {gap:10px;}
+.npw-review-card img {width:48px;height:48px;}
+.npw-job-card {font-size:1em;min-height:0;}
+.npw-footer-logo {color:var(--primary);font-weight:900;}
+.npw-footer-emoji {font-size:1.13em;}
+/* Анимация появления и bounce */
+.npw-glitch-in {animation:npwDustIn .7s;}
+.npw-bounce {animation:npwBounce 1s alternate;}
+@keyframes npwDustIn {0%{opacity:.1;filter:blur(18px) grayscale(1) brightness(2);} 60%{opacity:.2;filter:blur(5px) grayscale(.3);} 100%{opacity:1;filter:none;}}
+@keyframes npwBounce {0%{transform:scale(.97);}25%{transform:scale(1.07);}70%{transform:scale(1.01);}100%{transform:scale(1);}}
+/* Крупные кнопки */
+.npw-btn, .npw-btn-cta, .npw-btn-ghost {min-width:170px;min-height:44px;}
+/* Адаптив */
+@media (max-width: 900px) {.npw-container{padding:14px 4vw;}.npw-hero-title{font-size:1.7em;}}
+@media (max-width: 600px) {
+  .npw-features-grid,.npw-bonus-grid,.npw-loyalty-grid,.npw-services-grid,.npw-currency-grid,.npw-socials-grid,.npw-reviews-grid,.npw-jobs-grid,.npw-blog-grid {flex-direction:column;align-items:center;}
+  .npw-hero-flex{flex-direction:column;}
+  .npw-hero-mascot img{height:110px;}
+}

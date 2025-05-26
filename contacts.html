@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — APKEYS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Rubik:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="apkeys-bg">
+  <header class="header">
+    <div class="container flex-between">
+      <a href="index.html" class="logo apkeys-logo">
+        <img src="img/apkeys-logo.svg" alt="APKEYS" class="logo-img"/>
+        APKEYS
+      </a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html" class="nav-act">Поддержка</a>
+        <a href="cart.html" class="cart-link">
+          <span class="cart-emoji">🛒</span>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="profile.html" class="profile-link"><span class="profile-emoji">👤</span> Кабинет</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 class="section-title">Контакты и поддержка</h1>
+    <div class="contacts-block">
+      <p>Telegram: <a href="https://t.me/your_telegram" target="_blank">@your_telegram</a></p>
+      <p>E-mail: <a href="mailto:support@apkeys.ru">support@apkeys.ru</a></p>
+      <form id="support-form" class="support-form">
+        <label>Ваш e-mail:<input type="email" name="email" required></label>
+        <label>Сообщение:<textarea name="message" rows="3" required></textarea></label>
+        <button type="submit" class="btn big-btn">Отправить</button>
+      </form>
+      <div id="support-result"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="container flex-between">
+      <span class="footer-logo">APKEYS <span class="footer-emoji">🔥</span></span>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

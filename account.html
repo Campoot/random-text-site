@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личный кабинет — APKEYS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pastel-bg">
+  <header class="header">…</header>
+  <main class="container">
+    <div class="account-header">
+      <img src="img/avatars/default.png" class="account-avatar" id="user-avatar">
+      <div>
+        <h1 class="section-title">Привет, <span id="user-nickname"></span>!</h1>
+        <p id="user-email"></p>
+      </div>
+      <button onclick="logout()" class="btn bubbly-btn">Выйти</button>
+    </div>
+    <section>
+      <h2>Мои заказы</h2>
+      <div id="orders-history"></div>
+    </section>
+    <section>
+      <h2>Настройки</h2>
+      <form id="settings-form">
+        <label>Сменить ник: <input name="nickname"></label>
+        <label>Сменить аватар: <input name="avatar" type="file"></label>
+        <button type="submit" class="btn bubbly-btn">Сохранить</button>
+      </form>
+    </section>
+    <section id="admin-panel-link" style="display:none;">
+      <a href="admin.html" class="btn bubbly-btn">Перейти в админ-панель</a>
+    </section>
+  </main>
+  <footer>…</footer>
+  <script src="js/auth.js"></script>
+</body>
+</html>

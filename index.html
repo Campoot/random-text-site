@@ -1,40 +1,198 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Случайная строка</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APKEYS — Neo Pop Web магазин Steam-ключей</title>
+  <meta name="description" content="APKEYS: геймерский магазин Steam-ключей и валюты в стиле Neo Pop Web — ярко, удобно, весело!">
+  <link rel="stylesheet" href="css/neopop.css">
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=DM+Sans:wght@500;700&family=Rubik:wght@700&family=Fredoka:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Случайная строка:</h1>
-    <div id="random-text">Загрузка...</div>
+  <header class="npw-header">
+    <div class="npw-container npw-flex-between">
+      <a href="index.html" class="npw-logo">
+        <img src="img/apkeys-neopop.svg" alt="APKEYS" class="npw-logo-img"/>
+        <span>APKEYS</span>
+      </a>
+      <nav class="npw-nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="#ecosystem">Сервисы</a>
+        <a href="#bonus">Бонусы</a>
+        <a href="#media">Блог</a>
+        <a href="contacts.html">Поддержка</a>
+        <a href="cart.html" class="npw-cart-link">
+          <span class="npw-cart-emoji">🛒</span>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="login.html" class="npw-profile-link"><span class="npw-profile-emoji">👤</span> Войти</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- HERO -->
+    <section class="npw-hero npw-glitch-in">
+      <div class="npw-container npw-hero-flex">
+        <div class="npw-hero-content">
+          <h1 class="npw-hero-title">Neo Pop Web — магазин для геймеров <span class="npw-hero-emoji">🎮</span></h1>
+          <p class="npw-hero-desc">
+            Яркие сервисы, ключи, валюта и гифты. <br>
+            Быстро, безопасно, с эмоциями!<br>
+            <b style="color:#f80092;">Лови бонусы за покупки и бейджи!</b>
+          </p>
+          <div class="npw-hero-buttons">
+            <a href="catalog.html" class="npw-btn npw-btn-cta">В каталог</a>
+            <a href="register.html" class="npw-btn npw-btn-ghost">Регистрация</a>
+          </div>
+        </div>
+        <div class="npw-hero-mascot">
+          <img src="img/mascot-key-hero.png" alt="Ключик NeoPop" />
+        </div>
+      </div>
+      <div class="npw-bubble-bg"></div>
+    </section>
 
-    <script>
-        // URL для получения случайной строки из Google Apps Script
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbzXxKADeUcwbNfhUatEiXjDzC5woEzJOC4M1mUqiOrGa2I0pvGkGSHyUu2TyNDEmzAQ/exec";  // замените на свой ID
+    <!-- ОСНОВНЫЕ ВОЗМОЖНОСТИ -->
+    <section class="npw-features" id="ecosystem">
+      <div class="npw-container npw-features-grid">
+        <div class="npw-feature-card npw-bounce"><img src="img/icon-steam-npw.svg" alt=""><b>Пополнение Steam</b><span>Без комиссии</span></div>
+        <div class="npw-feature-card npw-bounce"><img src="img/icon-multi-npw.svg" alt=""><b>Сервисы</b><span>PS, Xbox, Roblox…</span></div>
+        <div class="npw-feature-card npw-bounce"><img src="img/icon-gold-npw.svg" alt=""><b>Валюта</b><span>Моментально</span></div>
+        <div class="npw-feature-card npw-bounce"><img src="img/icon-gift-npw.svg" alt=""><b>Гифты</b><span>В любой регион</span></div>
+        <div class="npw-feature-card npw-bounce"><img src="img/icon-key-npw.svg" alt=""><b>Ключи</b><span>и подписки</span></div>
+      </div>
+    </section>
 
-        // Функция для получения случайной строки с Google Apps Script
-        function getRandomText() {
-            fetch(scriptUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.data && data.data.length > 0) {
-                        document.getElementById("random-text").innerText = data.data[0];  // Показать строку
-                    } else {
-                        document.getElementById("random-text").innerText = "Нет данных";  // Если данных нет
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    document.getElementById("random-text").innerText = "Ошибка загрузки";
-                });
-        }
+    <!-- ПОПУЛЯРНЫЕ СЕРВИСЫ -->
+    <section class="npw-services">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Популярные сервисы</h2>
+        <div class="npw-services-grid">
+          <div class="npw-service-block npw-pop-gradient"><img src="img/icon-steam-npw.svg" alt=""><h3>Steam</h3><p>Мгновенно, без комиссии</p></div>
+          <div class="npw-service-block npw-pop-gradient"><img src="img/icon-ps-npw.svg" alt=""><h3>PlayStation</h3><p>Дешевле, чем в сторе</p></div>
+          <div class="npw-service-block npw-pop-gradient"><img src="img/icon-roblox-npw.svg" alt=""><h3>Roblox</h3><p>Геймпассы и Robux</p></div>
+        </div>
+      </div>
+    </section>
 
-        // Загружаем случайную строку при загрузке страницы
-        window.onload = getRandomText;
+    <!-- ИГРОВАЯ ВАЛЮТА -->
+    <section class="npw-currency" id="currency">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Игровая валюта</h2>
+        <div class="npw-currency-grid">
+          <div class="npw-currency-card"><img src="img/roblox.jpg" alt=""><span>Roblox</span></div>
+          <div class="npw-currency-card"><img src="img/pubgm.jpg" alt=""><span>PUBG Mobile</span></div>
+          <div class="npw-currency-card"><img src="img/genshin.jpg" alt=""><span>Genshin Impact</span></div>
+          <div class="npw-currency-card"><img src="img/mlbb.jpg" alt=""><span>Mobile Legends</span></div>
+          <div class="npw-currency-card"><img src="img/honkai.jpg" alt=""><span>Honkai: Star Rail</span></div>
+          <div class="npw-currency-card"><img src="img/arena.jpg" alt=""><span>Arena Breakout</span></div>
+          <div class="npw-currency-card"><img src="img/brawlstars.jpg" alt=""><span>Brawl Stars</span></div>
+          <div class="npw-currency-card"><img src="img/clashroyale.jpg" alt=""><span>Clash Royale</span></div>
+          <div class="npw-currency-card"><img src="img/pubg.jpg" alt=""><span>PUBG New State</span></div>
+        </div>
+      </div>
+    </section>
 
-        // Периодическая проверка обновлений (например, каждые 5 секунд)
-        setInterval(getRandomText, 5000);  // Каждые 5 секунд проверка обновлений
-    </script>
+    <!-- ВИТРИНА МАГАЗИНА -->
+    <section class="npw-promo" id="shop">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Магазин цифровых товаров</h2>
+        <div class="npw-shop-tabs">
+          <a href="#" class="npw-shop-tab npw-shop-tab-active">Игры</a>
+          <a href="#">Гифты</a>
+          <a href="#">Валюта</a>
+          <a href="#">Подписки</a>
+        </div>
+        <div id="promo-games" class="npw-games-grid"></div>
+        <div class="npw-shop-more"><a href="catalog.html" class="npw-btn npw-btn-cta">Больше товаров →</a></div>
+      </div>
+    </section>
+
+    <!-- БОНУСЫ И ГАРАНТИИ -->
+    <section class="npw-bonuses" id="bonus">
+      <div class="npw-container npw-bonus-grid">
+        <div class="npw-bonus-card"><img src="img/icon-sale-npw.svg" alt=""><b>Низкие цены</b><span>Скидки, конкурсы</span></div>
+        <div class="npw-bonus-card"><img src="img/icon-safe-npw.svg" alt=""><b>Надёжность</b><span>Платёж защищён</span></div>
+        <div class="npw-bonus-card"><img src="img/icon-choice-npw.svg" alt=""><b>Большой выбор</b><span>70 000+ товаров</span></div>
+        <div class="npw-bonus-card"><img src="img/icon-speed-npw.svg" alt=""><b>Скорость</b><span>Молниеносная доставка</span></div>
+      </div>
+    </section>
+
+    <!-- ПРОГРАММА ЛОЯЛЬНОСТИ -->
+    <section class="npw-loyalty">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Бонусы, стикеры и бейджи</h2>
+        <div class="npw-loyalty-grid">
+          <div class="npw-loyalty-card"><img src="img/icon-sticker-npw.svg" alt=""><b>Стикерпаки</b><p>Открывай за покупки, коллекционируй!</p></div>
+          <div class="npw-loyalty-card"><img src="img/icon-badge-npw.svg" alt=""><b>Бейджи</b><p>Зарабатывай за активность и кейсы</p></div>
+          <div class="npw-loyalty-card"><img src="img/icon-coin-npw.svg" alt=""><b>Монеты</b><p>1 монета = 1 рубль, платишь ими — скидка выше!</p></div>
+          <div class="npw-loyalty-card"><img src="img/icon-bonus-npw.svg" alt=""><b>Кэшбек</b><p>Возвращается за каждую покупку!</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СОЦСЕТИ -->
+    <section class="npw-socials">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Мы в соцсетях</h2>
+        <div class="npw-socials-grid">
+          <a href="#" class="npw-social-card"><img src="img/social-tg.png" alt=""><b>Telegram</b><span>@apkeys_news</span></a>
+          <a href="#" class="npw-social-card"><img src="img/social-vk.png" alt=""><b>ВКонтакте</b><span>@apkeys</span></a>
+          <a href="#" class="npw-social-card"><img src="img/social-yt.png" alt=""><b>YouTube</b><span>@apkeys</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОГ -->
+    <section class="npw-blog" id="media">
+      <div class="npw-container">
+        <h2 class="npw-section-title">APKEYS Media</h2>
+        <div class="npw-blog-grid">
+          <div class="npw-blog-card"><img src="img/preview-genshin.jpg" alt=""><div><b>Косплей-фест HoYoverse</b><p>18 апреля</p></div></div>
+          <div class="npw-blog-card"><img src="img/preview-battlefield.jpg" alt=""><div><b>Battlefield 6: первые тесты</b><p>8 апреля</p></div></div>
+          <div class="npw-blog-card"><img src="img/preview-psstore.jpg" alt=""><div><b>Лучшие игры PS Store до 1000р</b><p>3 апреля</p></div></div>
+        </div>
+        <div class="npw-blog-more"><a href="blog.html" class="npw-btn npw-btn-ghost">Больше статей →</a></div>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="npw-reviews">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Нас рекомендуют</h2>
+        <div class="npw-reviews-grid">
+          <div class="npw-review-card"><img src="img/influencer1.jpg" alt=""><span>BULKIN</span></div>
+          <div class="npw-review-card"><img src="img/influencer2.jpg" alt=""><span>Master Play</span></div>
+          <div class="npw-review-card"><img src="img/influencer3.jpg" alt=""><span>Игромания</span></div>
+          <div class="npw-review-card"><img src="img/influencer4.jpg" alt=""><span>CheZee</span></div>
+          <div class="npw-review-card"><img src="img/influencer5.jpg" alt=""><span>1337LikeR</span></div>
+          <div class="npw-review-card"><img src="img/influencer6.jpg" alt=""><span>SonnyK</span></div>
+          <div class="npw-review-card"><img src="img/influencer7.jpg" alt=""><span>Навигатор игр</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ВАКАНСИИ -->
+    <section class="npw-jobs">
+      <div class="npw-container">
+        <h2 class="npw-section-title">Работа в APKEYS</h2>
+        <div class="npw-jobs-grid">
+          <div class="npw-job-card"><b>Python developer [middle]</b><span>Москва, удалённо</span></div>
+          <div class="npw-job-card"><b>SMM-менеджер [junior/middle]</b><span>Москва, удалённо</span></div>
+          <div class="npw-job-card"><b>Product designer [middle/senior]</b><span>Москва, удалённо</span></div>
+          <div class="npw-job-card"><b>Project manager [middle]</b><span>Москва, удалённо</span></div>
+        </div>
+        <div class="npw-jobs-more"><a href="contacts.html" class="npw-btn npw-btn-ghost">Откликнуться</a></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="npw-container npw-flex-between">
+      <span class="npw-footer-logo">APKEYS <span class="npw-footer-emoji">🌈</span></span>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
